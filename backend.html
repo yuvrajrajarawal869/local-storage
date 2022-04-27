@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+   <style>
+       #navbar{
+           padding: 20px;
+           width: 90%;
+           background-color: blue;
+           display: flex;
+           justify-content: space-around;
+           margin-bottom: 30px;
+       }
+       a{
+           text-decoration: none;
+           font-size: 20px;
+           color: #fff;
+       }
+   </style>
+</head>
+<body>
+    <div id="navbar">
+        <div><a href="">backend</a></div>
+        <div><a href="C:\Users\arya\Documents\web_18.html\local storsge\investor page\frontend.html">frontend</a></div>
+    </div>
+    <form id="subForm">
+    <input type="text" value="" id="imgUrl" placeholder="Img"/>
+    <input type="text" value="" id="nam" placeholder="Name"/>
+    <input type="text" value="" id="logo" placeholder="Logo"/>
+    <input type="text" value="" id="role" placeholder="role"/>
+    <input type="submit"/>
+    </form>
+</form>
+</body>
+</html>
+<script>
+    
+var sumitInfo = document.querySelector("#subForm")
+sumitInfo.addEventListener("submit",myfun)
+var investorArray = JSON.parse(localStorage.getItem("data"))||[];
+function myfun(){
+    event.preventDefault();
+    var invObj ={
+        investorImg: subForm.imgUrl.value,
+        investorName: subForm.nam.value,
+        investorRole: document.querySelector("#role").value,
+        investorLogo: document.querySelector("#logo").value,
+    }
+
+    investorArray.push(invObj);
+   localStorage.setItem("data",JSON.stringify(investorArray))
+}
+</script>
